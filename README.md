@@ -1,2 +1,2 @@
-# webpack-template
-Template repo that sets up and configures Webpack for my apps
+# weather-app
+App that uses Visual Crossing's API to get weather data
