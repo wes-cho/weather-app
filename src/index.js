@@ -1,5 +1,4 @@
 import "./styles.css";
-import { greeting as helperGreeting } from "./helper.js"; 
-import { getWeather } from "./helper.js";
+import { greeting as helperGreeting } from "./weather.js"; 
 
 console.log(helperGreeting);
