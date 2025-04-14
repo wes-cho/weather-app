@@ -1,4 +1,12 @@
 import "./styles.css";
-import { greeting as helperGreeting } from "./weather.js"; 
+import { link, getWeather } from "./weather.js";
 
-console.log(helperGreeting);
+console.log(link);
+
+const location = document.querySelector("#location");
+const go = document.querySelector("#go");
+go.addEventListener("click", () => {
+    getWeather(location.value).then((weather)=> {
+        console.log(weather);
+    });
+});

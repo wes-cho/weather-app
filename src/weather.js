@@ -1,4 +1,7 @@
-export const greeting = "weather.js loaded";
+export { link, getWeather };
+
+const link = "weather.js loaded";
+
 class weatherObject {
     constructor(temp, feelsLike, high, low, description){
         this.temp = temp;
@@ -28,4 +31,3 @@ async function getWeather(location){
         console.log(error)
     };
 };
-getWeather('astoria');
