@@ -3,10 +3,19 @@ import { link, getWeather } from "./weather.js";
 
 console.log(link);
 
+const container = document.querySelector('#weatherCardContainer');
 const location = document.querySelector("#location");
 const go = document.querySelector("#go");
 go.addEventListener("click", () => {
     getWeather(location.value).then((weather)=> {
+        // const temperature = document.createElement('div');
+        //     container.appendChild(temperature);
+        //     const tempLabel = document.createElement('p');
+        //         tempLabel.textContent = 'Temperature:';
+        //     const tempValue = document.createElement('p');
+        //         tempValue.textContent = weather.temp;        
+        //     temperature.appendChild(tempLabel);
+        //     temperature.appendChild(tempValue);
         console.log(weather);
     });
 });
