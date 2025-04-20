@@ -1,8 +1,11 @@
 body{
     display: grid;
+    font-family: 'Open Sans', sans-serif;
 }
 #title{
     justify-self: center;
+    font-weight: 400;
+    font-size: 4rem;
 }
 #search{
     justify-self: center;
@@ -15,4 +18,12 @@ body{
 }
 #go{
     width: 2.5rem;
+}
+#weatherCardContainer{
+    justify-self: center;
+    margin-top: 3rem;
+}
+#statement{
+    font-size: 2.5rem;
+    font-weight: 300;
 }

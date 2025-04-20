@@ -25,7 +25,7 @@ async function getWeather(location){
             current.temp,
             today.tempmax,
             today.tempmin,
-            current.conditions,
+            current.conditions.split(" ").map((word)=> {return word[0].toUpperCase()+ word.substring(1)}).join(" "),
         );
         
         return weather;
