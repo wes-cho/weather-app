@@ -8,14 +8,8 @@ const location = document.querySelector("#location");
 const go = document.querySelector("#go");
 go.addEventListener("click", () => {
     getWeather(location.value).then((weather)=> {
-        // const temperature = document.createElement('div');
-        //     container.appendChild(temperature);
-        //     const tempLabel = document.createElement('p');
-        //         tempLabel.textContent = 'Temperature:';
-        //     const tempValue = document.createElement('p');
-        //         tempValue.textContent = weather.temp;        
-        //     temperature.appendChild(tempLabel);
-        //     temperature.appendChild(tempValue);
-        console.log(weather);
+        const statement = document.createElement('p');
+        statement.textContent = `It is currently ${weather.conditions} in ${weather.location}`
+        container.appendChild(statement);
     });
 });

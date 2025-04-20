@@ -1,0 +1,18 @@
+body{
+    display: grid;
+}
+#title{
+    justify-self: center;
+}
+#search{
+    justify-self: center;
+    display: flex;
+    gap: 1rem;
+}
+#location{
+    width: 12rem;
+    height: 1.2rem;
+}
+#go{
+    width: 2.5rem;
+}
