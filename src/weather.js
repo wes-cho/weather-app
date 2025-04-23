@@ -22,12 +22,13 @@ async function getWeather(location){
         // const overmorrow = weatherData.days[2];
         const weather = new weatherObject(
             weatherData.resolvedAddress.split(',')[0],
-            current.temp,
-            today.tempmax,
-            today.tempmin,
+            String(current.temp).split('.')[0] + '°',
+            String(today.tempmax).split('.')[0] + '°',
+            String(today.tempmin).split('.')[0] + '°',
             current.conditions.split(" ").map((word)=> {return word[0].toUpperCase()+ word.substring(1)}).join(" "),
         );
         
+        console.log(typeof(weather.temp));
         return weather;
 
     } catch (error) {

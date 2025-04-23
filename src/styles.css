@@ -31,9 +31,24 @@ body{
     font-weight: 300;
     grid-column: 2 / span 2;
 }
+#currentTempsContainer{
+    grid-column: 3;
+    grid-row: 2;
+}
+#current-temp{
+    font-size: 6rem;
+    margin: 1rem 0 0 0;
+    justify-self: center;
+    align-self: start;
+}
+#hiLow{
+    justify-self: center;
+    margin-right: 2rem;
+}
 .conditions-icon{
+    grid-column: 2;
+    grid-row: 2;
     width: 10rem;
     height: 10rem;
-    grid-column: 2 / span 2;
-    grid-row: 2;
+    margin: 0.5rem 0 0 2.5rem;
 }

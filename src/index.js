@@ -15,6 +15,20 @@ go.addEventListener("click", () => {
         statement.setAttribute('id', 'statement');
         container.appendChild(statement);
 
+        const currentTempsContainer = document.createElement('div');
+        currentTempsContainer.setAttribute('id', 'currentTempsContainer');
+        container.appendChild(currentTempsContainer);
+
+        const temperature = document.createElement('p');
+        temperature.textContent = weather.temp;
+        temperature.setAttribute('id', 'current-temp');
+        currentTempsContainer.appendChild(temperature);
+
+        const hiLow = document.createElement('p');
+        hiLow.textContent = weather.low + ' / ' + weather.high;
+        hiLow.setAttribute('id', 'hiLow');
+        currentTempsContainer.appendChild(hiLow);
+
         if (weather.conditions === 'Clear'){
             const clearIcon = document.createElement('img');
             clearIcon.src = sunIcon;
