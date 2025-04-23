@@ -1,5 +1,6 @@
 import "./styles.css";
 import { link, getWeather } from "./weather.js";
+import sunIcon from './weather-icons/Weather Icon Sun.png';
 
 console.log(link);
 
@@ -13,5 +14,14 @@ go.addEventListener("click", () => {
         statement.innerHTML = `It is currently <strong><i>${weather.conditions}</i></strong> in <strong><i>${weather.location}</i></strong>`
         statement.setAttribute('id', 'statement');
         container.appendChild(statement);
+
+        if (weather.conditions === 'Clear'){
+            const clearIcon = document.createElement('img');
+            clearIcon.src = sunIcon;
+            clearIcon.setAttribute('alt', 'sun');
+            clearIcon.setAttribute('class', 'conditions-icon')
+            container.appendChild(clearIcon); 
+        }
     });
 });
+
