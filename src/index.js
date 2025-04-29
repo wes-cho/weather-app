@@ -15,10 +15,13 @@ const go = document.querySelector("#go");
 go.addEventListener("click", () => {
     getWeather(location.value).then((weather)=> {
         container.replaceChildren();
+        const statementContainer = document.createElement('div');
+        statementContainer.setAttribute('id', 'statementContainer');
+        container.appendChild(statementContainer);
         const statement = document.createElement('p');
         statement.innerHTML = `It is currently <strong><i>${weather.conditions}</i></strong> in <strong><i>${weather.location}</i></strong>`
         statement.setAttribute('id', 'statement');
-        container.appendChild(statement);
+        statementContainer.appendChild(statement);
 
         const currentTempsContainer = document.createElement('div');
         currentTempsContainer.setAttribute('id', 'currentTempsContainer');
