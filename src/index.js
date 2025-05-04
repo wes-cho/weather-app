@@ -12,9 +12,18 @@ console.log(link);
 const container = document.querySelector('#weatherCardContainer');
 const location = document.querySelector("#location");
 const go = document.querySelector("#go");
+location.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+    event.preventDefault();
+    go.click();
+    
+    };
+});
 go.addEventListener("click", () => {
     getWeather(location.value).then((weather)=> {
         container.replaceChildren();
+
+        // Display the location and current weather condition
         const statementContainer = document.createElement('div');
         statementContainer.setAttribute('id', 'statementContainer');
         container.appendChild(statementContainer);
@@ -23,20 +32,22 @@ go.addEventListener("click", () => {
         statement.setAttribute('id', 'statement');
         statementContainer.appendChild(statement);
 
+        // Display the current temperature
         const currentTempsContainer = document.createElement('div');
         currentTempsContainer.setAttribute('id', 'currentTempsContainer');
         container.appendChild(currentTempsContainer);
-
         const temperature = document.createElement('p');
         temperature.textContent = weather.temp;
         temperature.setAttribute('id', 'current-temp');
         currentTempsContainer.appendChild(temperature);
 
+        // Display the today's high and low temps
         const hiLow = document.createElement('p');
         hiLow.textContent = weather.low + ' / ' + weather.high;
         hiLow.setAttribute('id', 'hiLow');
         currentTempsContainer.appendChild(hiLow);
 
+        // Create the weather icon based on the conditions
         if (weather.conditions.includes('Rain')){
             const rainIcon = document.createElement('img');
             rainIcon.src = rainPng;
@@ -74,6 +85,7 @@ go.addEventListener("click", () => {
             windIcon.setAttribute('class', 'conditions-icon');
             container.appendChild(windIcon);
         };
+        
     });
 });
 

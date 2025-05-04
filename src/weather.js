@@ -28,7 +28,6 @@ async function getWeather(location){
             current.conditions.split(" ").map((word)=> {return word[0].toUpperCase()+ word.substring(1)}).join(" "),
         );
         
-        console.log(typeof(weather.temp));
         return weather;
 
     } catch (error) {
