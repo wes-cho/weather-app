@@ -1,4 +1,6 @@
 {
+  "homepage": "https://wes-cho.github.io/weather-app",
+  "name": "weather-app",
   "devDependencies": {
     "css-loader": "^7.1.2",
     "eslint": "^9.23.0",
