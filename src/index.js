@@ -85,7 +85,33 @@ go.addEventListener("click", () => {
             windIcon.setAttribute('class', 'conditions-icon');
             container.appendChild(windIcon);
         };
-        
+
+        //Display tmrw and overmorrow's high and low temps
+        const futureTempsContainer = document.createElement('div');
+            futureTempsContainer.setAttribute('id', 'futureTempsContainer');
+            container.appendChild(futureTempsContainer);
+            const tmrwContainer = document.createElement('div');
+                tmrwContainer.setAttribute('id', 'tmrwContainer');
+                futureTempsContainer.appendChild(tmrwContainer);
+                const tmrw = document.createElement('p');
+                    tmrw.setAttribute('class', 'dayOfWeek');
+                    tmrw.textContent = "Tomorrow";
+                    tmrwContainer.appendChild(tmrw);
+                const tmrwTemps = document.createElement('p');
+                    tmrwTemps.setAttribute('class', 'futureHiLow');
+                    tmrwTemps.textContent = weather.tmrwLow + ' / ' + weather.tmrwHigh;
+                    tmrwContainer.appendChild(tmrwTemps);
+            const overmorrowContainer = document.createElement('div');
+                overmorrowContainer.setAttribute('id', 'overmorrowContainer');
+                futureTempsContainer.appendChild(overmorrowContainer);
+                const overmorrow = document.createElement('p');
+                    overmorrow.setAttribute('class' , 'dayOfWeek');
+                    overmorrow.textContent = "Overmorrow";
+                    overmorrowContainer.appendChild(overmorrow);
+                const overmorrowTemps = document.createElement('p');
+                    overmorrowTemps.setAttribute('class', 'futureHiLow');
+                    overmorrowTemps.textContent = weather.ovrLow + ' / ' + weather.ovrHigh;
+                    overmorrowContainer.appendChild(overmorrowTemps);
     });
 });
 
